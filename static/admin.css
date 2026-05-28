@@ -2,8 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-
-    /* darker overlay for readability */
     background: 
         linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url("/static/bgpic.jpg") no-repeat center center fixed;
@@ -12,25 +10,18 @@ body {
     min-height: 100vh;
 }
 
-/* 🧊 GLASS TABLE CARD */
 .table-container {
     width: 90%;
     margin: 60px auto;
     padding: 25px;
     border-radius: 16px;
-
     background: rgba(255, 255, 255, 0.15);
-
-    /* glass effect */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     border: 1px solid rgba(255, 255, 255, 0.25);
-
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
-/* TITLE */
 .table-container h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -39,7 +30,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* TABLE */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -47,7 +37,6 @@ table {
     border-radius: 10px;
 }
 
-/* HEADER */
 th {
     background: rgba(108, 92, 231, 0.85);
     color: white;
@@ -56,7 +45,6 @@ th {
     font-size: 14px;
 }
 
-/* ROWS */
 td {
     padding: 12px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -64,24 +52,20 @@ td {
     color: white;
 }
 
-/* hover effect */
 tr:hover {
     background: rgba(162, 155, 254, 0.2);
     transition: 0.2s;
 }
 
-/* alternating rows */
 tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* total column highlight */
 td:nth-child(4) {
     font-weight: bold;
     color: #a29bfe;
 }
 
-/* LOGOUT BUTTON (kept same but cleaner glass style) */
 .logout-btn {
     position: absolute;
     top: 20px;
