@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Brews & Barkada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+</head>
+
+<body>
+        <div class="table-container">
+    <a href="/logout" class="logout-btn">Logout</a>
+
+            <h2>Sales Records</h2>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Items Bought</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Date</th>
+                </tr>
+
+                {% for s in sales %}
+                <tr>
+                    <td>{{ s.id }}</td>
+                    <td>{{ s.username }}</td>
+                    <td>{{ s.item_bought }}</td>
+                    <td>₱{{ s.total }}</td>
+                    <td>{{ s.mode_of_payment }}</td>
+                    <td>{{ s.created_at }}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

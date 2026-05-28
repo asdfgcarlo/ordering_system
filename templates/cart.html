@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart - Brews & Barkada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+
+</head>
+
+<body>
+
+<h2>Your Cart</h2>
+
+{% for item in cart %}
+    <p>{{ item.item }} - ₱{{ item.price }}</p>
+{% endfor %}
+
+<h3>Total: ₱{{ total }}</h3>
+
+<form id="buyForm" action="/buy" method="POST">
+
+    <label for="payment">Select Payment Method:</label><br><br>
+
+    <select id="payment" name="payment" required>
+        <option value="" disabled selected>--- Choose Payment ---</option>
+        <option value="Cash">Cash</option>
+        <option value="GCash">GCash</option>
+        <option value="Credit Card">Credit Card</option>
+    </select>
+
+    <br><br>
+
+    <button id="buyBtn" type="submit" disabled class="buy-btn">
+        Buy Now
+    </button>
+
+    <br><br>
+
+    <a href="/clear_cart">Clear Cart</a>
+    <br>
+    <a href="/dashboard">Back</a>
+
+</form>
+
+<div id="loadingOverlay" class="hidden">
+    <div class="spinner"></div>
+    <p>Processing your order<i>, <b>{{ username }}</b></i>...</p>
+</div>
+
+<script>
+const payment = document.getElementById("payment");
+const buyBtn = document.getElementById("buyBtn");
+const form = document.getElementById("buyForm");
+const loadingOverlay = document.getElementById("loadingOverlay");
+
+loadingOverlay.classList.add("hidden");
+
+payment.addEventListener("change", function () {
+    buyBtn.disabled = this.value === "";
+});
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    loadingOverlay.classList.remove("hidden");
+
+    buyBtn.disabled = true;
+
+    setTimeout(() => {
+        form.submit();
+    }, 2000);
+});
+</script>
+
+</body>
+</html>

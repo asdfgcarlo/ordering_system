@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Brews & Barkada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='fav.png') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-content">
+        <h1>Brews & Barkada</h1>
+        <div class="user-info">
+            <span>Welcome, <b>{{ username }}</b>!</span>
+            <a href="/cart" class="cart-btn">View Cart</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- COFFEE -->
+    <h2>Coffee</h2>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='americano.jpg') }}" alt="Americano">
+            <div class="gallery-info">
+                <h3>Americano</h3>
+                <p>Hot Coffee</p>
+                <p>₱ 120</p>
+                <button class="add-btn" onclick="addToCart('Americano', 120)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='caffucino.jpg') }}" alt="Cappuccino">
+            <div class="gallery-info">
+                <h3>Cappuccino</h3>
+                <p>Espresso + Milk Foam</p>
+                <p>₱ 120</p>
+                <button class="add-btn" onclick="addToCart('Cappuccino', 120)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='latte.jpg') }}" alt="Latte">
+            <div class="gallery-info">
+                <h3>Latte</h3>
+                <p>Creamy Coffee</p>
+                <p>₱ 120</p>
+                <button class="add-btn" onclick="addToCart('Latte', 120)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='mocha.jpg') }}" alt="Mocha">
+            <div class="gallery-info">
+                <h3>Mocha</h3>
+                <p>Chocolate Coffee</p>
+                <p>₱ 120</p>
+                <button class="add-btn" onclick="addToCart('Mocha', 120)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- RICE MEALS -->
+    <h2>Rice Meals</h2>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='adobo.jpg') }}" alt="Chicken Adobo Rice">
+            <div class="gallery-info">
+                <h3>Chicken Adobo</h3>
+                <p>Filipino Classic</p>
+                <p>₱ 200</p>
+                <button class="add-btn" onclick="addToCart('Chicken Adobo', 200)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='beeftapa.jpg') }}" alt="Beef Tapa Rice">
+            <div class="gallery-info">
+                <h3>Beef Tapa</h3>
+                <p>Sweet & Savory</p>
+                <p>₱ 200</p>
+                <button class="add-btn" onclick="addToCart('Beef Tapa', 200)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='steakrice.jpg') }}" alt="Pork Sinigang Rice">
+            <div class="gallery-info">
+                <h3>Pork Sinigang</h3>
+                <p>Sour Soup Rice Meal</p>
+                <p>₱ 300</p>
+                <button class="add-btn" onclick="addToCart('Pork Sinigang', 300)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='chickencurry.jpg') }}" alt="Chicken Curry Rice">
+            <div class="gallery-info">
+                <h3>Chicken Curry</h3>
+                <p>Spicy Creamy Dish</p>
+                <p>₱ 200</p>
+                <button class="add-btn" onclick="addToCart('Chicken Curry', 200)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- DESSERTS -->
+    <h2>Desserts</h2>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='mangograham.jpg') }}" alt="Mango Graham">
+            <div class="gallery-info">
+                <h3>Mango Graham</h3>
+                <p>Sweet & Cold Dessert</p>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Mango Graham', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='lecheflan.jpg') }}" alt="Leche Flan">
+            <div class="gallery-info">
+                <h3>Leche Flan</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Leche Flan', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='chocotrufflecake.jpg') }}" alt="Chocolate Cake">
+            <div class="gallery-info">
+                <h3>Chocolate Cake</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Chocolate Cake', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='halohalo.jpg') }}" alt="Halo-Halo">
+            <div class="gallery-info">
+                <h3>Halo-Halo</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Halo-Halo', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- PASTRY -->
+    <h2>Pastry</h2>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='cheesegarlicbread.jpg') }}" alt="Cheesy Garlic Bread">
+            <div class="gallery-info">
+                <h3>Cheesy Garlic Bread</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Cheesy Garlic Bread', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='cheesyensaymada.jpg') }}" alt="Ensaymada">
+            <div class="gallery-info">
+                <h3>Cheesy Ensaymada</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Cheesy Ensaymada', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='chocoalmondcroissants.jpg') }}" alt="Chocolate Almond Croissant">
+            <div class="gallery-info">
+                <h3>Chocolate Almond Croissant</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Chocolate Almond Croissant', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='Cinnamon_Roll.jpg') }}" alt="Cinnamon Roll">
+            <div class="gallery-info">
+                <h3>Cinnamon Roll</h3>
+                <p>₱ 100</p>
+                <button class="add-btn" onclick="addToCart('Cinnamon Roll', 100)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+<script>
+function addToCart(item, price) {
+    fetch("/add_to_cart", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ item, price })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(item + " added to cart!");
+    });
+}
+</script>
+</html>
