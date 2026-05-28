@@ -8,9 +8,14 @@
 }
 
 body {
-    background: 
+    background:
         linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url("/static/bgpic.jpg") no-repeat center center fixed;
+        url("/static/bgpic.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
